@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+       <!-- <div>
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+        </div>
+        <ul>
+            <li class="show">1111</li>
+            <li>2222</li>
+            <li>3333</li>
+        </ul>-->
+        <!--<div id="drag" style="width:100px;height:100px;background:red;position: absolute;left:0;top:0;"></div>-->
+    </div>
+</body>
+<script>
+    /*var obj = document.querySelector('#drag');
+
+    var common = {
+        drag:function (obj){
+            var maxLeft = document.documentElement.clientWidth - obj.offsetWidth;
+            var maxTop = document.documentElement.clientHeight - obj.offsetHeight;
+            obj.onmousedown = function(ev){
+                var oEvent = ev || event;
+                var dis = {
+                    left:this.offsetLeft,
+                    top:this.offsetTop,
+                    x:oEvent.clientX,
+                    y:oEvent.clientY
+                };
+                document.onmousemove = function(ev){
+                    var oEvent = ev || event;
+                    var left = oEvent.clientX - dis.x + dis.left;
+                    left = left<0 ? 0 :(left > maxLeft ? maxLeft :left);
+                    var top = oEvent.clientY - dis.y + dis.top;
+                    top = top<0 ? 0 :(top>maxTop ? maxTop :top);
+                    obj.style.left = left +'px';
+                    obj.style.top = top + 'px';
+                };
+                document.onmouseup = function(ev){
+                    document.onmousemove = document.onmouseup = null;
+                };
+                return false;
+            };
+        },
+        move:function () {
+            
+        },
+        scroll:function () {
+            
+        },
+        wheel:function () {
+            
+        }
+    };
+
+    common.drag(obj);*/
+</script>
+<style>
+    li{display: none;}
+    .show{display: block;}
+    .active{border:1px solid #000;}
+</style>
+<script>
+    /*var aBtn = document.querySelectorAll('button');
+    var aLi = document.querySelectorAll('li');
+    var len = aBtn.length;
+    for(var i=0;i<len;i++){
+        (function(index){
+            aBtn[i].onclick=function(){
+                for(var i=0;i<len;i++){
+                    aBtn[i].className = '';
+                    aLi[i].className = '';
+                }
+                this.className = 'active';
+                aLi[index].className = 'show';
+            }
+        })(i);
+        /!*aBtn[i].index = i;
+        aBtn[i].onclick=function(){
+            alert(this.index);
+        }*!/
+    }
+*/
+    /*for(var i=0;i<2;i++){
+        (function(index){
+            alert(index);
+        })(i);
+    }*/
+
+    /*var json = {
+        a:1,
+        b:2
+    };
+
+    var wangyan_obj = {
+        a:1,
+        fn:function () {
+
+        }
+    };
+    wangyan_obj.fn();
+
+    var wangshuo_obj = {
+        a:'abc',
+        fn:function () {
+            alert(2);
+        }
+    };
+    wangshuo_obj.fn();*/
+</script>
+</html>
