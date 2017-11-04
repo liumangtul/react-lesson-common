@@ -7,19 +7,26 @@ export default class Table extends React.Component{
             index : 0
         }
     }
-
     render(){
+        let i = 0;
+        let btns = [];
+        let li = [];
+        while(i<3){
+            btns.push(
+                <button key={i} className={this.handleCls(i,'btn')} onClick={this.handleToggle.bind(this,i)}>{i}</button>
+            );
+            li.push(
+                <li key={i} className={this.handleCls(i)}>{i}</li>
+            );
+            i++;
+        }
         return(
             <div>
                 <div>
-                    <button className={this.handleCls(0,'btn')} onClick={()=>this.handleToggle(0)}>1</button>
-                    <button className={this.handleCls(1,'btn')} onClick={()=>this.handleToggle(1)}>2</button>
-                    <button className={this.handleCls(2,'btn')} onClick={()=>this.handleToggle(2)}>3</button>
+                    {btns}
                 </div>
                 <ul>
-                    <li className={this.handleCls(0)}>1111</li>
-                    <li className={this.handleCls(1)}>2222</li>
-                    <li className={this.handleCls(2)}>3333</li>
+                    {li}
                 </ul>
             </div>
         )

@@ -18,8 +18,7 @@ export default class Drag extends React.Component{
             left:0,
             top:0,
             downX:0,
-            downY:0,
-            flag:false
+            downY:0
         };
         this.handleMouseDown = this.handleMouseDown.bind(this);
         this.handleMouseMove = this.handleMouseMove.bind(this);
@@ -31,8 +30,6 @@ export default class Drag extends React.Component{
             <div
                 style={style}
                 onMouseDown = {this.handleMouseDown}
-                onMouseMove = {this.handleMouseMove}
-                onMouseUp = {this.handleMouseUp}
                 ref = 'obj'
             ></div>
         )
@@ -43,15 +40,13 @@ export default class Drag extends React.Component{
           downLeft:this.refs.obj.offsetLeft,
           downTop:this.refs.obj.offsetTop,
           downX:ev.clientX,
-          downY:ev.clientY,
-          flag:true
+          downY:ev.clientY
        });
        document.addEventListener('mousemove',this.handleMouseMove,false);
        document.addEventListener('mouseup',this.handleMouseUp,false);
     }
 
     handleMouseMove(ev){
-        if(!this.state.flag)return;
         let left = ev.clientX - this.state.downX + this.state.downLeft;
         let top = ev.clientY - this.state.downY + this.state.downTop;
         this.setState({
@@ -61,9 +56,6 @@ export default class Drag extends React.Component{
     }
 
     handleMouseUp(){
-        this.setState({
-            flag:false
-        });
         document.removeEventListener('mousemove',this.handleMouseMove,false);
     }
 
