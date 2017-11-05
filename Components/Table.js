@@ -43,17 +43,9 @@ export default class Table extends React.Component{
         alert(index)
     }*/
     handleCls(ind,type){
-        let cls;
-        if(type == 'btn'){
-            cls = 'active';
-        }else{
-            cls = 'show';
-        }
-        if(ind == this.state.index){
-            return cls;
-        }else{
-            return '';
-        }
+        let cls = type == 'btn'?'active':'show';
+        let str = ind == this.state.index?cls:'';
+        return str;
     }
 }
 
