@@ -1,14 +1,5 @@
 import React from 'react';
 
-let style = {
-    width:'100px',
-    height:'100px',
-    background:'red',
-    position:'absolute',
-    left:0,
-    top:0
-};
-
 export default class Drag extends React.Component{
     constructor(props){
         super(props);
@@ -28,7 +19,16 @@ export default class Drag extends React.Component{
     render(){
         return(
             <div
-                style={style}
+                style={
+                    {
+                        width:'100px',
+                        height:'100px',
+                        background:'red',
+                        position:'absolute',
+                        left:this.state.left+'px',
+                        top:this.state.top+'px'
+                    }
+                }
                 onMouseDown = {this.handleMouseDown}
                 ref = 'obj'
             ></div>
@@ -57,11 +57,5 @@ export default class Drag extends React.Component{
 
     handleMouseUp(){
         document.removeEventListener('mousemove',this.handleMouseMove,false);
-    }
-
-    componentDidUpdate(){
-        console.log(this.state);
-        this.refs.obj.style.left = this.state.left+'px';
-        this.refs.obj.style.top = this.state.top+'px';
     }
 };
